@@ -4,6 +4,11 @@ else
 DRV_PATH := $(WIFI_DRIVER_DIR)
 endif
 
+ARCH ?= mips
+CROSS_COMPILE ?= mipsel-linux-
+
+export ARCH
+export CROSS_COMPILE
 
 obj-m += hawk_usb.o
 
@@ -69,7 +74,7 @@ ifeq ($(WIFI_DRIVER_DIR),)
 ccflags-y += -DSTA_VIF_NAME='"hawk_sta"'
 ccflags-y += -DSOFTAP_VIF_NAME='"hawk_ap"'
 ccflags-y += -DMON_VIF_NAME='"mon.hawk_ap"'
-ccflags-y += -DTASKNAME_PRINT
+#ccflags-y += -DTASKNAME_PRINT
 else
 ccflags-y += -DSTA_VIF_NAME='"wlan0"'
 ccflags-y += -DSOFTAP_VIF_NAME='"wlan1"'
@@ -125,16 +130,17 @@ CONFIG_MAC_FROM_EFUSE ?= 0
 ccflags-y += -DWQ_MAC_FROM_EFUSE=$(CONFIG_MAC_FROM_EFUSE)
 
 all:
-ifeq ($(WIFI_DRIVER_DIR),)
-	make V=1 -C /lib/modules/`uname -r`/build M=`pwd` modules
-else
-	make V=1 -C $(KSRC) M=$(DRV_PATH) modules
+ifeq ($(KSRC),)
+	$(error KSRC must be defined. Please specify the kernel source directory)
 endif
-
+	$(MAKE) V=1 -C $(KSRC) M=$(DRV_PATH) \
+		ARCH=$(ARCH) \
+		CROSS_COMPILE=$(CROSS_COMPILE) \
+		modules
 
 clean:
-ifeq ($(WIFI_DRIVER_DIR),)
-	make -C /lib/modules/`uname -r`/build M=`pwd` clean
-else
-	make -C $(KSRC) M=$(DRV_PATH) clean
-endif
+	rm -f *.o *.ko *.mod.c *.mod.o .*.cmd modules.order Module.symvers
+	rm -rf .tmp_versions
+	find . -name '*.o' -delete
+	find . -name '.*.o.d' -delete
+	find . -name '.*.o.cmd' -delete
