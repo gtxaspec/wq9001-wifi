@@ -73,6 +73,7 @@ ccflags-y += -DWQ_FW_DL
 ccflags-y += -DSTA_VIF_NAME='"wlan0"'
 ccflags-y += -DSOFTAP_VIF_NAME='"wlan1"'
 ccflags-y += -DMON_VIF_NAME='"mon.wlan1"'
+#ccflags-y += -DTASKNAME_PRINT
 
 #log: 0(none), 1(oops), 2(err), 3(wrn), 4(inf)
 ccflags-y += -DWQ_LOG_USB_SEV=4
