@@ -70,16 +70,9 @@ ccflags-y += -DWQ_FW_DL
 #ccflags-y += -DWQ_ADD_AUTH_ASOC_IE
 #ccflags-y += -DWQ_LOAD_CALI_FROM_FILE
 
-ifeq ($(WIFI_DRIVER_DIR),)
-ccflags-y += -DSTA_VIF_NAME='"hawk_sta"'
-ccflags-y += -DSOFTAP_VIF_NAME='"hawk_ap"'
-ccflags-y += -DMON_VIF_NAME='"mon.hawk_ap"'
-#ccflags-y += -DTASKNAME_PRINT
-else
 ccflags-y += -DSTA_VIF_NAME='"wlan0"'
 ccflags-y += -DSOFTAP_VIF_NAME='"wlan1"'
 ccflags-y += -DMON_VIF_NAME='"mon.wlan1"'
-endif
 
 #log: 0(none), 1(oops), 2(err), 3(wrn), 4(inf)
 ccflags-y += -DWQ_LOG_USB_SEV=4
@@ -94,7 +87,7 @@ CONFIG_USB_MSG_TP =2
 endif
 
 #EP_TYPE: 2(BULK), 3(INT)
-CONFIG_USB_MSG_TP ?= 3
+CONFIG_USB_MSG_TP ?= 2
 ccflags-y += -DWQ_MSG_IN_EP_TYPE=$(CONFIG_USB_MSG_TP)
 ccflags-y += -DWQ_MSG_OUT_EP_TYPE=$(CONFIG_USB_MSG_TP)
 
