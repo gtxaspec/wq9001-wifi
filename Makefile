@@ -10,55 +10,55 @@ CROSS_COMPILE ?= mipsel-linux-
 export ARCH
 export CROSS_COMPILE
 
-obj-m += hawk_usb.o
+obj-m += wq9001.o
 
-hawk_usb-y= wifi_drv.o
-hawk_usb-y+= oss/osal.o
-hawk_usb-y+= oss/mmal.o
-hawk_usb-y+= oss/taskq.o
-hawk_usb-y+= oss/mbuf.o
-hawk_usb-y+= oss/w_debug.o
-hawk_usb-y+= oss/net_if.o
-hawk_usb-y+= oss/oss.o
-hawk_usb-y+= oss/usb.o
+wq9001-y= wifi_drv.o
+wq9001-y+= oss/osal.o
+wq9001-y+= oss/mmal.o
+wq9001-y+= oss/taskq.o
+wq9001-y+= oss/mbuf.o
+wq9001-y+= oss/w_debug.o
+wq9001-y+= oss/net_if.o
+wq9001-y+= oss/oss.o
+wq9001-y+= oss/usb.o
 
 #wproto
-#hawk_usb-y+= wproto/net80211_main.o
-hawk_usb-y+= wproto/net80211/ieee80211.o
-hawk_usb-y+= wproto/net80211/ieee80211_action.o
-hawk_usb-y+= wproto/net80211/ieee80211_ageq.o
-hawk_usb-y+= wproto/net80211/ieee80211_crypto.o
-hawk_usb-y+= wproto/net80211/ieee80211_crypto_ccmp.o
-hawk_usb-y+= wproto/net80211/ieee80211_crypto_none.o
-hawk_usb-y+= wproto/net80211/ieee80211_crypto_tkip.o
-hawk_usb-y+= wproto/net80211/ieee80211_crypto_wep.o
-hawk_usb-y+= wproto/net80211/ieee80211_hostap.o
-hawk_usb-y+= wproto/net80211/ieee80211_ht.o
-hawk_usb-y+= wproto/net80211/ieee80211_input.o
-hawk_usb-y+= wproto/net80211/ieee80211_ioctl.o
-hawk_usb-y+= wproto/net80211/ieee80211_monitor.o
-hawk_usb-y+= wproto/net80211/ieee80211_node.o
-hawk_usb-y+= wproto/net80211/ieee80211_output.o
-hawk_usb-y+= wproto/net80211/ieee80211_phy.o
-hawk_usb-y+= wproto/net80211/ieee80211_power.o
-hawk_usb-y+= wproto/net80211/ieee80211_proto.o
-hawk_usb-y+= wproto/net80211/ieee80211_regdomain.o
-hawk_usb-y+= wproto/net80211/ieee80211_scan.o
-hawk_usb-y+= wproto/net80211/ieee80211_scan_sta.o
-hawk_usb-y+= wproto/net80211/ieee80211_scan_sw.o
-hawk_usb-y+= wproto/net80211/ieee80211_sim.o
-hawk_usb-y+= wproto/net80211/ieee80211_sta.o
-hawk_usb-y+= wproto/net80211/ieee80211_xauth.o
-hawk_usb-y+= wproto/net80211/ieee80211_extap.o
+#wq9001-y+= wproto/net80211_main.o
+wq9001-y+= wproto/net80211/ieee80211.o
+wq9001-y+= wproto/net80211/ieee80211_action.o
+wq9001-y+= wproto/net80211/ieee80211_ageq.o
+wq9001-y+= wproto/net80211/ieee80211_crypto.o
+wq9001-y+= wproto/net80211/ieee80211_crypto_ccmp.o
+wq9001-y+= wproto/net80211/ieee80211_crypto_none.o
+wq9001-y+= wproto/net80211/ieee80211_crypto_tkip.o
+wq9001-y+= wproto/net80211/ieee80211_crypto_wep.o
+wq9001-y+= wproto/net80211/ieee80211_hostap.o
+wq9001-y+= wproto/net80211/ieee80211_ht.o
+wq9001-y+= wproto/net80211/ieee80211_input.o
+wq9001-y+= wproto/net80211/ieee80211_ioctl.o
+wq9001-y+= wproto/net80211/ieee80211_monitor.o
+wq9001-y+= wproto/net80211/ieee80211_node.o
+wq9001-y+= wproto/net80211/ieee80211_output.o
+wq9001-y+= wproto/net80211/ieee80211_phy.o
+wq9001-y+= wproto/net80211/ieee80211_power.o
+wq9001-y+= wproto/net80211/ieee80211_proto.o
+wq9001-y+= wproto/net80211/ieee80211_regdomain.o
+wq9001-y+= wproto/net80211/ieee80211_scan.o
+wq9001-y+= wproto/net80211/ieee80211_scan_sta.o
+wq9001-y+= wproto/net80211/ieee80211_scan_sw.o
+wq9001-y+= wproto/net80211/ieee80211_sim.o
+wq9001-y+= wproto/net80211/ieee80211_sta.o
+wq9001-y+= wproto/net80211/ieee80211_xauth.o
+wq9001-y+= wproto/net80211/ieee80211_extap.o
 
 #wdrv
-hawk_usb-y+= wdrv/driver_main.o
-hawk_usb-y+= wdrv/mwl/if_hawk.o
-hawk_usb-y+= wdrv/mwl/if_hawk_port.o
-hawk_usb-y+= wdrv/mwl/hawkhal.o
-hawk_usb-y+= wdrv/mwl/wq_hal_rx.o
-hawk_usb-y+= wdrv/mwl/wq_ipc.o
-hawk_usb-y+= wdrv/mwl/wq_htc_desc.o
+wq9001-y+= wdrv/driver_main.o
+wq9001-y+= wdrv/mwl/if_hawk.o
+wq9001-y+= wdrv/mwl/if_hawk_port.o
+wq9001-y+= wdrv/mwl/hawkhal.o
+wq9001-y+= wdrv/mwl/wq_hal_rx.o
+wq9001-y+= wdrv/mwl/wq_ipc.o
+wq9001-y+= wdrv/mwl/wq_htc_desc.o
 
 
 subdir-ccflags-y +=  -I$(DRV_PATH)/wdrv -I$(DRV_PATH)/wdrv/mwl  -I$(DRV_PATH)/oss -I$(DRV_PATH)/wproto
@@ -70,16 +70,10 @@ ccflags-y += -DWQ_FW_DL
 #ccflags-y += -DWQ_ADD_AUTH_ASOC_IE
 #ccflags-y += -DWQ_LOAD_CALI_FROM_FILE
 
-ifeq ($(WIFI_DRIVER_DIR),)
-ccflags-y += -DSTA_VIF_NAME='"hawk_sta"'
-ccflags-y += -DSOFTAP_VIF_NAME='"hawk_ap"'
-ccflags-y += -DMON_VIF_NAME='"mon.hawk_ap"'
-#ccflags-y += -DTASKNAME_PRINT
-else
 ccflags-y += -DSTA_VIF_NAME='"wlan0"'
 ccflags-y += -DSOFTAP_VIF_NAME='"wlan1"'
 ccflags-y += -DMON_VIF_NAME='"mon.wlan1"'
-endif
+#ccflags-y += -DTASKNAME_PRINT
 
 #log: 0(none), 1(oops), 2(err), 3(wrn), 4(inf)
 ccflags-y += -DWQ_LOG_USB_SEV=4
@@ -94,7 +88,7 @@ CONFIG_USB_MSG_TP =2
 endif
 
 #EP_TYPE: 2(BULK), 3(INT)
-CONFIG_USB_MSG_TP ?= 3
+CONFIG_USB_MSG_TP ?= 2
 ccflags-y += -DWQ_MSG_IN_EP_TYPE=$(CONFIG_USB_MSG_TP)
 ccflags-y += -DWQ_MSG_OUT_EP_TYPE=$(CONFIG_USB_MSG_TP)
 
