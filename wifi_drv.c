@@ -4341,7 +4341,7 @@ int wq_mp_cali_free() {
         if (cali[0]==0 && cali[1]==0 && cali[2]==0 && cali[3]==0 && cali[4]==0) {
 #endif
             //read efuse from file
-            fp_cali_efuse = filp_open("./WQ9001_WiFi_Mapfile.dat", O_RDONLY, 00700);
+            fp_cali_efuse = filp_open("/etc/WQ9001_WiFi_Mapfile.dat", O_RDONLY, 00700);
             if (IS_ERR(fp_cali_efuse)){
                 iot_printf("open WQ9001_WiFi_Mapfile.dat error\n");
             } else {
