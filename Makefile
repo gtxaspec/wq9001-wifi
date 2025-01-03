@@ -68,7 +68,7 @@ ccflags-y += -DWQ_DEBUG
 #ccflags-y += -DWQ_BUS_TEST
 ccflags-y += -DWQ_FW_DL
 #ccflags-y += -DWQ_ADD_AUTH_ASOC_IE
-#ccflags-y += -DWQ_LOAD_CALI_FROM_FILE
+ccflags-y += -DWQ_LOAD_CALI_FROM_FILE
 
 ccflags-y += -DSTA_VIF_NAME='"wlan0"'
 ccflags-y += -DSOFTAP_VIF_NAME='"wlan1"'
